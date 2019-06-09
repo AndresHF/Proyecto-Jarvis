@@ -19,17 +19,17 @@ Proyecto basado en el reconocimiento de voz para controlar el ordenador por coma
 
 # Librerías de Python utilizadas 
 
-# speech_recognition
+<h3>speech_recognition</h3>
 Responsable de transformar la voz en texto.
 
-# subprocess
+<h3>subprocess</h3>
 Para controlar la comunicación entre el programa y la terminal.
 
-# gTTS
+<h3>gTTS</h3>
 Librería de Google (Text To Speech), es básicamente la voz del programa.
 
-# pyaudio
+<h3>pyaudio</h3>
 Realizando operaciones de grabación y reproducción de audio.
 
-# urllib.request y bs4
+<h3>urllib.request y bs4</h3>
 Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
