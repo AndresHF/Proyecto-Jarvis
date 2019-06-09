@@ -19,7 +19,7 @@ Proyecto basado en el reconocimiento de voz para controlar el ordenador por coma
 
 # Librerías de Python utilizadas 
 
-<h3 style="color: blue;">speech_recognition</h3>
+<h3>speech_recognition</h3>
 Responsable de transformar la voz en texto.
 
 <h3>subprocess</h3>
