@@ -2,18 +2,18 @@
 
 Proyecto basado en el reconocimiento de voz para controlar el ordenador por comandos utilizando Python y linux scripting
 
-<h2>Sus habilidades son:<h2>
+<h2>Sus habilidades son:</h2>
 <ul>
-  <li>1- Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
-<li>2- Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
-<li>3- Explica el significado de cualquier palabra preguntada.</li>
-<li>4- Realiza operaciones de grabación / reproducción de audios a demanda.</li>
-<li>5- Puede contestar sobre la temperatura de cualquier ciudad del mundo.</li>
-<li>6- Controlar y responder sobre el estado del volumen del sistema.</li>
-<li>7- Cerrar aplicaciones abiertas.</li>
-<li>8- Realizar búsquedas sobre ficheros en el sistema.</li>
-<li>9- Poner alarmas.</li>
-<li>10- Y lo más importante.... te cuenta chistes malos...</li>
+  <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
+<li>Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
+<li>Explica el significado de cualquier palabra preguntada.</li>
+<li>Realiza operaciones de grabación / reproducción de audios a demanda.</li>
+<li>Puede contestar sobre la temperatura de cualquier ciudad del mundo.</li>
+<li>Controlar y responder sobre el estado del volumen del sistema.</li>
+<li>Cerrar aplicaciones abiertas.</li>
+<li>Realizar búsquedas sobre ficheros en el sistema.</li>
+<li>Poner alarmas.</li>
+<li>Y lo más importante.... te cuenta chistes malos...</li>
 </ul>  
 
 
