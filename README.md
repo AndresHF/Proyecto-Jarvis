@@ -64,23 +64,36 @@ cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/display
 ```
 <h3>Librerías de Python</h3>
 Para instalar las dependencias sitúate en la carpeta raíz del proyecyo:
+Si no tienes pip3.7:
+
+```
+python3.7 -m pip install pip
+```
+
 <h4>speech_recognition</h4>
 Responsable de transformar la voz en texto.
+
 ```
 pip3.7 install speech_recognition
 ```
+
 <h4>gTTS</h4>
 Librería de Google (Text To Speech), es básicamente la voz del programa.
+
 ```
 pip3.7 install gTTS
 ```
+
 <h4>pyaudio</h4>
 Realizando operaciones de grabación y reproducción de audio.
+
 ```
 pip3.7 install pyaudio
 ```
+
 <h4>urllib.request y bs4</h4>
 Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
+
 ```
 pip3.7 install bs4
 ```
