@@ -1,5 +1,8 @@
 import subprocess
 from orders.web_operations import scraping
+import core.jarvisCore as jc
+from core.orders.constants import *
+import random
 
 youtubeLastOrder = None
 
@@ -44,6 +47,36 @@ def findInMaps(order):
     )
 
     # So its time to open our browser with the URL Google Maps likes to use
+    subprocess.Popen(
+        ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
+    )
+
+
+def findRoutes():
+    jc.jarvisTalk("Establece un punto de partida")
+    origin = jc.listen()
+    jc.jarvisTalk("Añade un destino")
+    destination = jc.listen()
+    moreDestinations = []
+    jc.jarvisTalk(random.choice(destinations))
+    answer = jc.listen()
+    while "finaliza" not in answer or "no" in answer:
+        jc.jarvisTalk(random.choice(destinationAnswer))
+        moreDestinations.append(jc.listen())
+        jc.jarvisTalk(random.choice(destinations))
+        answer = jc.listen()
+    jc.jarvisTalk("Petición finalizada, buscando rutas. ¡Buen viaje!")
+    url = (
+        "https://www.google.es/maps/dir/"
+        + ",+".join(origin.split(" "))
+        + "/"
+        + ",+".join(destination.split(" "))
+    )
+
+    for dest in moreDestinations:
+        url += "/" + ",+".join(dest.split(" "))
+    # So its time to open our browser with the URL Google Maps likes to use
+    print(url)
     subprocess.Popen(
         ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
     )
