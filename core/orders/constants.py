@@ -19,3 +19,17 @@ skills = "Soy capaz de controlar operaciones del sistema, realizar cualquier tip
 how = "Gracias a ciertas librerías de Python y comandos de Linux, robo información de páginas, por eso soy tan listo..."
 
 crazyMode = ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
+
+destinations = [
+    "¿Algún destino adicional?",
+    "¿Quieres añadir más?",
+    "¿Algún otro emplazamiento?",
+    "¿Algún otro destino?",
+]
+
+destinationAnswer = [
+    "Dímelo",
+    "Procede",
+    "Donde tu me digas",
+    "¿Voy haciendo las maletas? Dispara",
+]
