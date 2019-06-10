@@ -3,7 +3,7 @@
 
 - [Introducción](#introducción)
 - [Instalación](#instalación)
-- [Despliegue](#despliegue)
+- [Comandos de voz](#comandos)
 - [Explicación](#explicación)
 - [APIs](#apis)
 - [Presentación](#presentación)
@@ -105,3 +105,28 @@ Sitúate en la raíz del proyecto y ejecuta el programa:
 ```
 python3.7 jarvis.py
 ```
+
+<h3>Comandos de voz</h3>
+
+Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes ordenar las siguientes instrucciones:
+
+<ul>
+  <li>Busca [orden de parámetros (ej: ropa de oferta)]</li>
+  <li>Busca en Wikipedia [orden de parámetros (ej: Mahatma Gandhi)]</li>
+  <li>Busca en maps [orden de parámetros (ej: restaurantes cerca de Novelda Alicante)]</li>
+  <li>Busca en el sistema [orden de parámetros (ej: descargas)]</li>
+  <li>Pon [orden de parámetros (ej: documental sobre la informática)]</li>
+  <li>Qué es un [orden de parámetros (ej: roedor)]</li>
+  <li>Graba la conversación</li>
+  <li>Reproduce una conversación</li>
+  <li>Qué [tiempo / temperatura] hace en [orden de parámetros (ej: Río de Janeiro)] </li>
+  <li>Pon el volumen al [orden de parámetros (ej: 50)][% | puntos | ""]</li>
+  <li>[Sube / baja] el volumen [orden de parámetros (ej: 10)][% | puntos | ""]</li>
+  <li>Dime el estado actual del volumen</li>
+  <li>Cierra [Chrome | code | etc]</li>
+  <li>Pon una alarma a las [orden de parámetros (ej: 17:30 | 17)]</li>
+  <li>Cuéntame un chiste</li>
+  <li>Quién eres</li>
+  <li>Cuál es tu propósito</li>
+</ul> 
+
