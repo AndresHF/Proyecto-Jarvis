@@ -71,28 +71,28 @@ Si no tienes pip3.7:
 python3.7 -m pip install pip
 ```
 
-<h4>speech_recognition</h4>
+<h4><a href="https://pypi.org/project/SpeechRecognition/">speech_recognition</a></h4>
 Responsable de transformar la voz en texto.
 
 ```
 pip3.7 install speech_recognition
 ```
 
-<h4>gTTS</h4>
+<h4><a href="https://pypi.org/project/gTTS/">gTTS</a></h4>
 Librería de Google (Text To Speech), es básicamente la voz del programa.
 
 ```
 pip3.7 install gTTS
 ```
 
-<h4>pyaudio</h4>
+<h4><a href="https://pypi.org/project/PyAudio/">pyaudio</a></h4>
 Realizando operaciones de grabación y reproducción de audio.
 
 ```
 pip3.7 install pyaudio
 ```
 
-<h4>urllib.request y bs4</h4>
+<h4>urllib.request y <a href="https://pypi.org/project/beautifulsoup4/">bs4</a></h4>
 Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
 
 ```
