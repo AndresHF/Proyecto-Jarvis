@@ -4,10 +4,6 @@
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Comandos](#comandos)
-- [Explicación](#explicación)
-- [APIs](#apis)
-- [Presentación](#presentación)
-- [Enlaces de interés](#enlaces-de-interés)
 
 ---
 
@@ -20,6 +16,7 @@ Está basado en el reconocimiento de voz para controlar el ordenador por comando
 <ul>
   <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
   <li>Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
+  <li>Establece rutas en GoogleMaps</li>
   <li>Reproduce bajo demanda cualquier tipo de vídeo o música de YouTube.</li>
   <li>Explica el significado de cualquier palabra preguntada.</li>
   <li>Realiza operaciones de grabación / reproducción de audios a demanda.</li>
@@ -114,6 +111,7 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li>Busca [orden de parámetros (ej: ropa de oferta)]</li>
   <li>Busca en Wikipedia [orden de parámetros (ej: Mahatma Gandhi)]</li>
   <li>Busca en maps [orden de parámetros (ej: restaurantes cerca de Novelda Alicante)]</li>
+  <li>Busca rutas: [origen, destino, más destinos]</li>
   <li>Busca en el sistema [orden de parámetros (ej: descargas)]</li>
   <li>Pon [orden de parámetros (ej: documental sobre la informática)]</li>
   <li>Qué es un [orden de parámetros (ej: roedor)]</li>
