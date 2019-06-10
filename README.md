@@ -12,7 +12,7 @@
 ---
 
 <h2>Introducción</h2>
-Este proyecto se ha realizado como <b>TFC</b> para el <b>Grado Superior de Desarrollo de Aplicaciones Web</b> en el <b>I.E.S María de Zayas y Sotomayor</b>. 
+Este proyecto se ha realizado como <b>TFC</b> para el <b>Grado Superior de Desarrollo de Aplicaciones Web</b> en el <b><a href="http://ies.mariadezayas.majadahonda.educa.madrid.org/Joomla/">I.E.S María de Zayas y Sotomayor</a></b>. 
 <br>
 <br>
 Está basado en el reconocimiento de voz para controlar el ordenador por comandos utilizando Python y linux scripting.
