@@ -98,3 +98,10 @@ Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
 ```
 pip3.7 install bs4
 ```
+
+<h4>Si has seguido todos los pasos</h4>
+Sitúate en la raíz del proyecto y ejecuta el programa:
+
+```
+python3.7 jarvis.py
+```
