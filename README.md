@@ -3,7 +3,7 @@
 
 - [Introducción](#introducción)
 - [Instalación](#instalación)
-- [Comandos de voz](#comandos)
+- [Comandos](#comandos)
 - [Explicación](#explicación)
 - [APIs](#apis)
 - [Presentación](#presentación)
@@ -106,7 +106,7 @@ Sitúate en la raíz del proyecto y ejecuta el programa:
 python3.7 jarvis.py
 ```
 
-<h3>Comandos de voz</h3>
+<h3>Comandos</h3>
 
 Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes ordenar las siguientes instrucciones:
 
