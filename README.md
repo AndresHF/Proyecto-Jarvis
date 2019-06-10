@@ -1,7 +1,4 @@
 # Proyecto-Jarvis
-
-Proyecto basado en el reconocimiento de voz para controlar el ordenador por comandos utilizando Python y linux scripting
-
 ---
 
 - [Introducción](#introducción)
@@ -15,7 +12,10 @@ Proyecto basado en el reconocimiento de voz para controlar el ordenador por coma
 ---
 
 <h2>Introducción</h2>
-<h3>Sus habilidades son:</h3>
+Este proyecto se ha realizado como <b>TFC</b> para el <b>Grado Superior de Desarrollo de Aplicaciones Web</b> en el <b>I.E.S María de Zayas y Sotomayor</b>. 
+<br>
+Está basado en el reconocimiento de voz para controlar el ordenador por comandos utilizando Python y linux scripting.
+<h3>Instrucciones programadas:</h3>
 <ul>
   <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
 <li>Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
@@ -28,7 +28,7 @@ Proyecto basado en el reconocimiento de voz para controlar el ordenador por coma
 <li>Poner alarmas.</li>
 <li>Y lo más importante.... te cuenta chistes malos...</li>
 </ul>  
-
+---
 
 # Librerías de Python utilizadas 
 
