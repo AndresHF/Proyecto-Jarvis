@@ -36,7 +36,15 @@ Está planteado en futuras versiones añadir Inteligencia Artificial junto con c
 <h2>Instalación</h2>
 
 <h3>Prerequisitos</h3>
-Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https://www.linux.org/pages/download/">GNU/Linux</a></b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>
+Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https://www.linux.org/pages/download/">GNU/Linux</a></b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>.
+<br>
+Será necesario también tener instalado Google-Chrome, wmctrl, pactl, cvlc y xterm.
+<br>
+Descarga el repositorio:
+
+```
+git clone https://github.com/AndresHF/Proyecto-Jarvis.git
+```
 
 <h3>Configuración de scripts de linux</h3>
 
@@ -54,19 +62,25 @@ cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/alarm
 ```
 cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/display
 ```
-# Librerías de Python utilizadas 
-
-<h3>speech_recognition</h3>
+<h3>Librerías de Python</h3>
+Para instalar las dependencias sitúate en la carpeta raíz del proyecyo:
+<h4>speech_recognition</h4>
 Responsable de transformar la voz en texto.
-
-<h3>subprocess</h3>
-Para controlar la comunicación entre el programa y la terminal.
-
-<h3>gTTS</h3>
+```
+pip3.7 install speech_recognition
+```
+<h4>gTTS</h4>
 Librería de Google (Text To Speech), es básicamente la voz del programa.
-
-<h3>pyaudio</h3>
+```
+pip3.7 install gTTS
+```
+<h4>pyaudio</h4>
 Realizando operaciones de grabación y reproducción de audio.
-
-<h3>urllib.request y bs4</h3>
+```
+pip3.7 install pyaudio
+```
+<h4>urllib.request y bs4</h4>
 Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
+```
+pip3.7 install bs4
+```
