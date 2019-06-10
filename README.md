@@ -63,7 +63,8 @@ cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/alarm
 cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/display
 ```
 <h3>Librerías de Python</h3>
-Para instalar las dependencias sitúate en la carpeta raíz del proyecyo:
+Para instalar las dependencias sitúate en la carpeta raíz del proyecyo.
+<br>
 Si no tienes pip3.7:
 
 ```
