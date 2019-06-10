@@ -39,9 +39,11 @@ Está planteado en futuras versiones añadir Inteligencia Artificial junto con c
 Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https://www.linux.org/pages/download/">GNU/Linux</a></b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>
 
 <h3>Configuración de scripts de linux</h3>
+
 ```
 chmod 777 "/...mi-ruta-al-poyecto/shellScripts/alarm.sh"
 ```
+
 ```
 chmod 777 "/...mi-ruta-al-poyecto/shellScripts/display.sh"
 ```
