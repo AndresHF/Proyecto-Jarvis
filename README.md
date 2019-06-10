@@ -2,6 +2,18 @@
 
 Proyecto basado en el reconocimiento de voz para controlar el ordenador por comandos utilizando Python y linux scripting
 
+---
+
+- [Introducción](#introducción)
+- [Instalación](#instalación)
+- [Despliegue](#despliegue)
+- [Explicación](#explicación)
+- [APIs](#apis)
+- [Presentación](#presentación)
+- [Enlaces de interés](#enlaces-de-interés)
+
+---
+
 <h2>Sus habilidades son:</h2>
 <ul>
   <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
