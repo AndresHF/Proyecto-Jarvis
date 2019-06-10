@@ -36,7 +36,9 @@ Está planteado en futuras versiones añadir Inteligencia Artificial junto con c
 <h2>Instalación</h2>
 
 <h3>Prerequisitos</h3>
-Es necesario ejecutar el programa en cualquier ditribución de <b>GNU/Linux</b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>
+Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https://www.linux.org/pages/download/">GNU/Linux</a></b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>
+
+<h3>Configuración de scripts de linux</h3>
 
 # Librerías de Python utilizadas 
 
