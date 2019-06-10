@@ -28,7 +28,8 @@ Está basado en el reconocimiento de voz para controlar el ordenador por comando
 <li>Poner alarmas.</li>
 <li>Y lo más importante.... te cuenta chistes malos...</li>
 </ul>  
----
+
+Está planteado en futuras versiones añadir Inteligencia Artificial junto con chatterbot de Python.
 
 # Librerías de Python utilizadas 
 
