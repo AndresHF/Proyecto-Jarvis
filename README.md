@@ -96,7 +96,7 @@ pip3.7 install pyaudio
 Para abrir conexiones a páginas, leerlas y realizar operaciones de scrapping.
 
 ```
-pip3.7 install bs4
+pip3.7 install beautifulsoup4
 ```
 
 <h4>Si has seguido todos los pasos</h4>
