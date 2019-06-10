@@ -41,10 +41,15 @@ Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https
 <h3>Configuración de scripts de linux</h3>
 ```
 chmod 777 "/...mi-ruta-al-poyecto/shellScripts/alarm.sh"
+```
+```
 chmod 777 "/...mi-ruta-al-poyecto/shellScripts/display.sh"
 ```
+
 ```
 cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/alarm
+```
+```
 cp /...mi-ruta-al-poyecto/shellScripts/alarm.sh /usr/local/bin/display
 ```
 # Librerías de Python utilizadas 
