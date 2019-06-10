@@ -14,7 +14,8 @@ Proyecto basado en el reconocimiento de voz para controlar el ordenador por coma
 
 ---
 
-<h2>Sus habilidades son:</h2>
+<h2>Introducción</h2>
+<h3>Sus habilidades son:</h3>
 <ul>
   <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
 <li>Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
