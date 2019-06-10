@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alarm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        h1, .container{
+            text-align: center;
+            float: left;
+        }
+
+        .container{
+            margin: 5% auto;
+            display: grid;
+            grid-template-columns: 70% 10% 10% 10%;
+            width: 500px;
+            clear: both;
+            border: 1px solid antiquewhite;
+            vertical-align: bottom;
+        }
+        .B {
+            width: 600px;
+            grid-template-columns: 55% 15% 15% 15%;
+        }
+        .timeContainer, h1, input  {
+            font-family: 'Courier New', Courier, monospace;
+            color: antiquewhite;
+            font-size: 30px;
+        }
+        .timeContainer {
+            height: 70px;
+            line-height: 70px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            width: 50px;
+            height: 50px !important;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .button {
+            background-color: green;
+            color:black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 26px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #speech{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Local Time</h1>
+        <div class="timeContainer hour"></div>
+        <div class="timeContainer minute"></div>
+        <div class="timeContainer second"></div>
+    </div>
+    <div class="container B">
+            <h1>Alarm Time</h1>
+            <input type="number" value="00" min="0" max="23" id="hour">
+            <input type="number" value="00" min="0" max="59" id="minute">
+            <input type="number" value="00" min="0" max="59" id="second">
+
+            <div class="button">Set Alarm</div>
+    </div>
+    <div class="container">
+            <h1>Time Remaining</h1>
+            <div class="timeContainer rHour">00:</div>
+            <div class="timeContainer rMinute">00:</div>
+            <div class="timeContainer rSecond">00</div>
+    </div>
+    <script>
+            let isTimeTouched = false;
+            let activated = false;
+            let h;
+            let m;
+            let s;
+            updateTime();
+            setInterval(updateTime, 995);
+            let alarmDate;
+
+            if(window.location.href.includes("hour") && !activated){
+                activated = true;
+                isTimeTouched = true;
+                let splitURL = window.location.href.split("?")[1].split("&");
+                $("#hour").val(splitURL[0].split("=")[1]);
+                $("#minute").val(splitURL[1].split("=")[1]);
+                $("#second").val(splitURL[2].split("=")[1]);
+                setAlarmDate();
+            }
+            $("input").click(() => {
+                if(!isTimeTouched) isTimeTouched = !isTimeTouched;
+            });
+            $(".button").click(() => {
+                if(!activated) activated = !activated;
+                isTimeTouched = true;
+                setAlarmDate();
+
+            });
+            function setAlarmDate(){
+                alarmDate = new Date();
+                if(h > $("#hour").val() ||
+                  (h == $("#hour").val() && m > $("#minute").val()) ||
+                  (h == $("#hour").val() && m == $("#minute").val()) && s > $("#second").val())  
+                  alarmDate.setDate(alarmDate.getDate() + 1);
+                
+                alarmDate.setHours($("#hour").val(), $("#minute").val(), $("#second").val());
+                
+            }
+            function updateTime(){
+
+                let local = new Date();
+                h = local.getHours();
+                m = local.getMinutes();
+                s = local.getSeconds();            
+
+                setTime($(".hour"),$(".minute"),$(".second"), formatTime(h), formatTime(m), formatTime(s));
+                if(!isTimeTouched) setTime($("#hour"),$("#minute"),$("#second"), formatTime(h), formatTime(m), formatTime(s));
+                if(activated) calculateRemaining(local);
+            }
+            function formatTime(time){
+                if((time + "").length === 1 ) return "0" + time; 
+                return time;
+
+            }
+            function setTime(elem1, elem2, elem3, h, m, s){
+                elem1.html(h + ":"); elem1.val(h);
+                elem2.html(m + ":"); elem2.val(m);
+                elem3.html(s);       elem3.val(s);
+            }
+
+            function calculateRemaining(localDate){
+                let remaining = alarmDate.getTime() - localDate.getTime();
+                //if(remaining < 0) window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                let rH = Math.floor(remaining / 3600000);
+                remaining = (remaining / 3600000) - rH;
+                let rM = Math.floor(remaining * 60);
+                remaining = (remaining * 60) - rM;
+                let rS = Math.floor(remaining * 60);
+
+                speechTimeRemaining(rH, rM, rS);
+                setTime($(".rHour"),$(".rMinute"),$(".rSecond"), formatTime(rH), formatTime(rM), formatTime(rS));
+                 
+            }
+            function speechTimeRemaining(h, m, s){
+                let speech;
+                let voice = "Spanish Female";
+                if(h === 1 && m === 0 && s === 0){
+                    speech = "Te queda una hora truán";
+                }else if(h === 0 && m === 30 && s === 0){
+                    speech = "Sólo te quedan treinta minutos, máquina";
+                }else if(h === 0 && m === 5 && s === 0){
+                    speech = "En cinco minutos se acaba el mundo... ¡ooo uuu boy!";
+                }else if(h === 0 && m === 0 && s <= 10){
+                    speech = s + "";
+                }else if(h < 0){
+                    speech = "pi pi";
+                }else{
+                    return;
+                }
+                responsiveVoice.speak(speech, voice);
+            }
+    </script>
+</body>
+</html>
