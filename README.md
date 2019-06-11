@@ -8,6 +8,8 @@
 
 ---
 
+---
+
 <h2>Introducción</h2>
 Este proyecto se ha realizado como <b>TFC</b> para el <b>Grado Superior de Desarrollo de Aplicaciones Web</b> en el <b><a href="http://ies.mariadezayas.majadahonda.educa.madrid.org/Joomla/">I.E.S María de Zayas y Sotomayor</a></b>. 
 <br>
@@ -31,6 +33,9 @@ Está basado en el reconocimiento de voz para controlar el ordenador por comando
 
 Está planteado en futuras versiones añadir Inteligencia Artificial junto con chatterbot de Python e incorporar interfaz gráfica.
 
+---
+
+---
 <h2>Instalación</h2>
 
 <h3>Prerequisitos</h3>
@@ -103,7 +108,9 @@ Sitúate en la raíz del proyecto y ejecuta el programa:
 ```
 python3.7 jarvis.py
 ```
+---
 
+---
 <h3>Comandos</h3>
 
 Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes ordenar las siguientes instrucciones:
@@ -128,6 +135,9 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li>Quién eres</li>
   <li>Cuál es tu propósito</li>
 </ul> 
+---
+
+---
 
 <h3>Documentación</h3>
 <h4>Aprendiendo Python</h4>
@@ -150,3 +160,5 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li><a href="https://people.csail.mit.edu/hubert/pyaudio/docs/">PyAudio</a></li>
   <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></li>
 </ul>
+
+---
