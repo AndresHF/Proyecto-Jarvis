@@ -112,7 +112,7 @@ python3.7 jarvis.py
 
 ---
 
-<h3>Comandos</h3>
+<h2>Comandos</h2>
 
 Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes ordenar las siguientes instrucciones:
 
@@ -141,7 +141,7 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
 
 ---
 
-<h3>Documentación</h3>
+<h2>Documentación</h2>
 <h4>Aprendiendo Python</h4>
 <ul>
   <li><a href="https://docs.python.org/3/">Python 3.7.3 documentation</a></li>
