@@ -22,10 +22,10 @@ Está basado en el reconocimiento de voz para controlar el ordenador por comando
   <li>Explica el significado de cualquier palabra preguntada.</li>
   <li>Realiza operaciones de grabación / reproducción de audios a demanda.</li>
   <li>Puede contestar sobre la temperatura de cualquier ciudad del mundo.</li>
-  <li>Controlar y responder sobre el estado del volumen del sistema.</li>
-  <li>Cerrar aplicaciones abiertas.</li>
-  <li>Realizar búsquedas sobre ficheros en el sistema.</li>
-  <li>Poner alarmas.</li>
+  <li>Controla y responde sobre el estado del volumen del sistema.</li>
+  <li>Cierra aplicaciones abiertas.</li>
+  <li>Realiza búsquedas sobre ficheros en el sistema.</li>
+  <li>Pone alarmas.</li>
   <li>Y lo más importante.... te cuenta chistes malos...</li>
 </ul>  
 
