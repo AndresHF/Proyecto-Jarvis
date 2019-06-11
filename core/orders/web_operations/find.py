@@ -2,6 +2,7 @@ import subprocess
 from orders.web_operations import scraping
 import core.jarvisCore as jc
 from core.orders.constants import *
+from core.talk.constants import *
 import random
 
 youtubeLastOrder = None
@@ -58,14 +59,19 @@ def findRoutes():
     jc.jarvisTalk("Añade un destino")
     destination = jc.listen()
     moreDestinations = []
-    jc.jarvisTalk(random.choice(destinations))
-    answer = jc.listen()
-    while "finaliza" not in answer or "no" in answer:
-        jc.jarvisTalk(random.choice(destinationAnswer))
-        moreDestinations.append(jc.listen())
-        jc.jarvisTalk(random.choice(destinations))
-        answer = jc.listen()
-    jc.jarvisTalk("Petición finalizada, buscando rutas. ¡Buen viaje!")
+    answer = ""
+    while "finaliza" not in answer:
+        try:
+            jc.jarvisTalk(random.choice(destinations))
+            answer = jc.listen()
+            if len(answer) > 0 and "finaliza" not in answer:
+                jc.jarvisTalk(random.choice(destinationAnswer))
+                moreDestinations.append(jc.listen())
+            elif "finaliza" not in answer:
+                jc.jarvisTalk("No has dicho nada")
+        except:
+            jc.jarvisTalk(random.choice(iDontUnderstand))
+    jc.jarvisTalk("Petición finalizada. Buscando rutas.")
     url = (
         "https://www.google.es/maps/dir/"
         + ",+".join(origin.split(" "))
@@ -75,20 +81,16 @@ def findRoutes():
 
     for dest in moreDestinations:
         url += "/" + ",+".join(dest.split(" "))
-    # So its time to open our browser with the URL Google Maps likes to use
-    print(url)
-    subprocess.Popen(
-        ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
-    )
+
+    subprocess.Popen(["google-chrome " + url + " &"], shell=True)
+    jc.jarvisTalk("¡Buen viaje!")
 
 
 def findInWikipedia(order):
     wikiSreach = order.split("wikipedia")[1]
     search = "_".join(wikiSreach.split(" ")).title()
     url = "https://es.wikipedia.org/wiki/" + search
-    subprocess.Popen(
-        ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
-    )
+    subprocess.Popen(["google-chrome " + url + " &"], shell=True)
 
 
 def searchAndPlay(order, cutter="música"):
@@ -102,7 +104,7 @@ def searchAndPlay(order, cutter="música"):
         # in case we already openned a YouTube video we should close it first, it´s annoying to have to videos playin at same time
         try:
             # first step is look for our video getting all web browser process
-            p = subprocess.Popen(
+            popen = subprocess.Popen(
                 [
                     'wmctrl -l | egrep -i "YouTube" | egrep -i "'
                     + youtubeLastOrder
@@ -111,22 +113,18 @@ def searchAndPlay(order, cutter="música"):
                 shell=True,
                 stdout=subprocess.PIPE,
             )
-            output = p.communicate(b"' stdin")[0]
+            output = popen.communicate(b"' stdin")[0]
             line = "".join(map(chr, output)).split("jaguars-M14xR1")[1].strip()
 
             # so we close it looking for last video oppened
-            subprocess.Popen(['wmctrl -c "' + line + '"'], shell=True)
+            subprocess.call(['wmctrl -c "' + line + '"'], shell=True)
             youtubeLastOrder = realPetition
         except:
             # or close last founded in case we fail
-            subprocess.Popen(["wmctrl -c YouTube"], shell=True)
+            subprocess.call(["wmctrl -c YouTube"], shell=True)
 
     # after that we get our link by scrapYoutubeWatchURL() method
     link = scraping.scrapYoutubeWatchURL(order, cutter)
 
     # then we open it
-    subprocess.Popen(
-        ["google-chrome --new-window " + link + " &"],
-        stdout=subprocess.PIPE,
-        shell=True,
-    )
+    subprocess.call(["google-chrome --new-window " + link + " &"], shell=True)

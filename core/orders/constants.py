@@ -4,7 +4,7 @@ disconectingOrders = ["apágate", "desconéctate", "duérmete"]
 
 generalOrders = ["inicia"]
 
-answerQuestionOrders = ["cuánta", "qué", "cómo", "quién", "dime", "cuéntame", "cúal"]
+answerQuestionOrders = ["qué", "cómo", "quién", "dime", "cuéntame", "cúal", "quiero"]
 
 knowingThingsConstants = ["es ", "son "]
 
@@ -16,7 +16,7 @@ purpose = "Servir a mi creador Andrés, funcionar bien durante la exposición e 
 
 skills = "Soy capaz de controlar operaciones del sistema, realizar cualquier tipo búsqueda en el navegador y contestar cierto tipo de preguntas"
 
-how = "Gracias a ciertas librerías de Python y comandos de Linux, robo información de páginas, por eso soy tan listo..."
+how = "Gracias a ciertas librerías de Python y comandos de Linux, robo información de páginas, por eso soy tan lista..."
 
 crazyMode = ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
 
@@ -27,9 +27,18 @@ destinations = [
     "¿Algún otro destino?",
 ]
 
-destinationAnswer = [
-    "Dímelo",
-    "Procede",
-    "Donde tu me digas",
-    "¿Voy haciendo las maletas? Dispara",
-]
+destinationAnswer = ["Dímelo", "Procede", "Donde tu me digas", "Dispara"]
+
+notesAddConstants = ["tomar", "apuntar", "escribir", "redactar", "crear"]
+
+afirmativeNoteWrited = ["Ahá", "Si", "Tomo nota", "¿Qué más?"]
+
+knowNotes = ["enumera", "tengo"]
+
+noteContent = ["hay", "tiene", "contenido", "redactado"]
+
+deleteNotes = ["borrar", "eliminar"]
+
+modifyNote = ["modificar", "actualizar"]
+
+delteNote = ["borrar", "eliminar", "tirar a la basura"]

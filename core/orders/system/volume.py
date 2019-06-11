@@ -7,13 +7,12 @@ def getNumbersInString(order):
 
 
 def getActualVolume():
-    volAsByteArr = subprocess.Popen(
+    popen = subprocess.Popen(
         ['pactl list sinks | grep "Volume: front" | cut -f2 -d"/" | cut -b 3-4'],
-        stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         shell=True,
     )
-    volToCharArr = volAsByteArr.communicate(b"' stdin")[0]
+    volToCharArr = popen.communicate()[0]
     return "".join(map(chr, volToCharArr)).strip()
 
 
@@ -28,4 +27,5 @@ def setVolume(order):
 
     volumeOrder += str(newVol).strip() + "%"
     print(volumeOrder)
-    subprocess.Popen([volumeOrder], shell=True, stdout=subprocess.PIPE)
+    subprocess.call([volumeOrder], shell=True)
+

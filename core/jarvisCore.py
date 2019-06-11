@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup as soup
 from unicodedata import normalize
 
 from orders.system import volume
+from orders.system.notes import notesOperations
 
 from orders.web_operations import find
 from orders.web_operations import *
@@ -27,7 +28,6 @@ from orders.constants import *
 
 engine = pyttsx3.init("espeak")
 
-voices = engine.getProperty("voices")
 engine.setProperty("voice", "spanish")
 
 engine.setProperty("rate", 200)  # Speed percent (can go over 100)
@@ -79,7 +79,7 @@ def listen(message=""):
             return text + ""
 
         except sr.UnknownValueError:
-            return "Estoy a la escucha"
+            return ""
 
 
 def recieveOrder(dur=0, message=""):
@@ -111,15 +111,15 @@ def searchInBrowserProtocol(order):
             find.findInWikipedia(order)
         elif "google" in order:
             find.findInGoogle(order)
+        elif "ruta" in order or "rutas" in order:
+            find.findRoutes()
         elif "maps" in order:
             find.findInMaps(order)
         elif "sistema" in order:
             word = answer.getLastWord(order)
             if word is "project":
                 word += "s"
-            subprocess.Popen(
-                ['xterm -e "display ' + word + '"'], shell=True, stdout=subprocess.PIPE
-            )
+            subprocess.call(['xterm -e "display ' + word + '"'], shell=True)
         else:
             find.findInGoogle(order, "busca")
     except:
@@ -128,30 +128,30 @@ def searchInBrowserProtocol(order):
 
 def setProtocol(order):
     order = order.lower()
-    try:
-        if "volumen" in order:
-            volume.setVolume(order)
-        elif "alarma" in order:
-            time = order.split(" ")[len(order.split(" ")) - 1]
-            hour = time.split(":")[0]
-            minute = ""
-            if ":" in time:
-                minute = " " + time.split(":")[1]
-            subprocess.Popen(
-                ["alarm " + hour + minute], shell=True, stdout=subprocess.PIPE
-            )
-        else:
-            find.searchAndPlay(order, "pon")
-    except:
-        jarvisTalk("Error en los parámetros")
+    # try:
+    if "volumen" in order:
+        volume.setVolume(order)
+    elif "alarma" in order:
+        time = order.split(" ")[len(order.split(" ")) - 1]
+        hour = time.split(":")[0]
+        minute = ""
+        if ":" in time:
+            minute = " " + time.split(":")[1]
+        subprocess.call(["alarm " + hour + minute], shell=True)
+    elif "nota" in order or "notas" in order:
+        notesOperations(order)
+    else:
+        find.searchAndPlay(order, "pon")
+    # except:
+    #    jarvisTalk("Error en los parámetros")
 
 
 def closingProtocol(order):
     order = order.lower()
     if "chrome" in order:
-        subprocess.Popen(["killall chrome"], shell=True, stdout=subprocess.PIPE)
+        subprocess.call(["killall chrome"], shell=True)
     elif "firefox" in order:
-        subprocess.Popen(["killall firefox"], shell=True, stdout=subprocess.PIPE)
+        subprocess.call(["killall firefox"], shell=True)
     elif "code" in order or "kodi" in order:
-        subprocess.Popen(["killall code"], shell=True, stdout=subprocess.PIPE)
+        subprocess.call(["killall code"], shell=True)
 

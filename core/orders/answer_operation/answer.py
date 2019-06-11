@@ -1,6 +1,7 @@
 import jarvisCore as jc
 from bs4 import BeautifulSoup as soup
 from core.orders.system.volume import *
+from core.orders.system.notes import *
 from core.orders.web_operations import scraping
 from core.orders.constants import *
 
@@ -16,7 +17,7 @@ weatherLabels = [
 def answerQuestion(order):
     if "volumen" in order:
         jc.jarvisTalk("El volumen está actualmente al " + getActualVolume() + " %")
-    elif "qué" in order:
+    elif "qué" in order or "que" in order:
         knowThings(order)
     elif "chiste" in order:
         label = scraping.getLabel(
@@ -29,10 +30,14 @@ def answerQuestion(order):
         jc.jarvisTalk(purpose)
     elif "haces" in order:
         jc.jarvisTalk(how)
+    elif "nota" in order or "notas" in order:
+        knowThings(order)
 
 
 def knowThings(order):
-    if "hora es" in order:
+    if "notas" in order or "nota" in order:
+        notesOperations(order)
+    elif "hora es" in order:
         getTimeAsByteArr = subprocess.Popen(
             ["date '+%X'"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True
         )
