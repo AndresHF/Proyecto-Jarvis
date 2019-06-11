@@ -130,12 +130,12 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
 </ul> 
 
 <h3>Documentación</h3>
-<h2>Aprendiendo Python</h2>
+<h4>Aprendiendo Python</h4>
 <ul>
   <li><a href="https://docs.python.org/3/">Python 3.7.3 documentation</a></li>
   <li><a href="https://www.pythoncentral.io/">pythoncentral.io</a></li>
 </ul>
-<h2>Teoría</h2>
+<h4>Teoría</h4>
 <ul>
   <li><a href="https://www.lumenvox.com/espanol/resources/tips/historyOfSpeechRecognition.aspx">Historia del reconocimiento de voz 1</a></li>
   <li><a href="">Historia del reconocimiento de voz 2</a></li>
@@ -143,7 +143,7 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li><a href="http://director-it.com/index.php/es/ssoluciones/servicio-de-voz/acd,-call-center,-pabx/178-asr-reconocedor-de-voz.html">¿Cómo funciona el roconocimiento de voz?</a></li>
   <li><a href="https://es.wikipedia.org/wiki/Modelo_oculto_de_M%C3%A1rkov">Modelo oculto de Markov</a></li>
 </ul>
-<h2>Dependencias</h2>
+<h4>Dependencias</h4>
 <ul>
   <li><a href="https://realpython.com/python-speech-recognition/">speech_recognition</a></li>
   <li><a href="https://gtts.readthedocs.io/en/v2.0.0/">gTTS</a></li>
