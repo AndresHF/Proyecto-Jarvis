@@ -17,7 +17,7 @@ Está basado en el reconocimiento de voz para controlar el ordenador por comando
 <ul>
   <li>Búsqueda de cualquier tipo de información en Google / Wikipedia.</li>
   <li>Búsqueda de emplazamientos, restaurantes, tiendas, etc... en GoogleMaps.</li>
-  <li>Establece rutas en GoogleMaps</li>
+  <li>Establece rutas en GoogleMaps pudiendo añadir múltiples destinos</li>
   <li>Reproduce bajo demanda cualquier tipo de vídeo o música de YouTube.</li>
   <li>Explica el significado de cualquier palabra preguntada.</li>
   <li>Realiza operaciones de grabación / reproducción de audios a demanda.</li>
