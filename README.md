@@ -4,7 +4,7 @@
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Comandos](#comandos)
-- [Webgrafía](#webgrafía)
+- [Documentación](#documentación)
 
 ---
 
@@ -83,7 +83,7 @@ Librería de Google (Text To Speech), es básicamente la voz del programa.
 pip3.7 install gTTS
 ```
 
-<h4><a href="https://pypi.org/project/PyAudio/">pyaudio</a></h4>
+<h4><a href="https://pypi.org/project/PyAudio/">PyAudio</a></h4>
 Realizando operaciones de grabación y reproducción de audio.
 
 ```
@@ -112,10 +112,10 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li>Busca [orden de parámetros (ej: ropa de oferta)]</li>
   <li>Busca en Wikipedia [orden de parámetros (ej: Mahatma Gandhi)]</li>
   <li>Busca en maps [orden de parámetros (ej: restaurantes cerca de Novelda Alicante)]</li>
-  <li>Busca rutas: [origen, destino, más destinos]</li>
+  <li>Busca rutas: [origen (ej: Madrid), destino(ej: Frankfurt Alemania), más destinos | "finaliza"]</li>
   <li>Busca en el sistema [orden de parámetros (ej: descargas)]</li>
   <li>Pon [orden de parámetros (ej: documental sobre la informática)]</li>
-  <li>Qué es un [orden de parámetros (ej: roedor)]</li>
+  <li>Qué es/son [el/la | los/las | etc..] [orden de parámetros (ej: roedor)]</li>
   <li>Graba la conversación</li>
   <li>Reproduce una conversación</li>
   <li>Qué [tiempo / temperatura] hace en [orden de parámetros (ej: Río de Janeiro)] </li>
@@ -129,4 +129,27 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li>Cuál es tu propósito</li>
 </ul> 
 
-<h3>Webgrafía</h3>
+<h3>Documentación</h3>
+<h2>Aprendiendo Python</h2>
+<ul>
+  <li><a href="https://docs.python.org/3/">Python 3.7.3 documentation</a></li>
+  <li><a href="https://www.pythoncentral.io/">pythoncentral.io</a></li>
+  <li><a href=""></a></li>
+</ul>
+<h2>Teoría</h2>
+<ul>
+  <li><a href="https://www.lumenvox.com/espanol/resources/tips/historyOfSpeechRecognition.aspx">Historia del reconocimiento de voz 1</a></li>
+  <li><a href="">Historia del reconocimiento de voz 2</a></li>
+  <li><a href="https://es.wikipedia.org/wiki/Reconocimiento_del_habla">Características del reconocimiento de voz</a></li>
+  <li><a href="http://director-it.com/index.php/es/ssoluciones/servicio-de-voz/acd,-call-center,-pabx/178-asr-reconocedor-de-voz.html">¿Cómo funciona el roconocimiento de voz?</a></li>
+  <li><a href="https://es.wikipedia.org/wiki/Modelo_oculto_de_M%C3%A1rkov">Modelo oculto de Markov</a></li>
+  <li><a href=""></a></li>
+</ul>
+<h2>Dependencias</h2>
+<ul>
+  <li><a href="https://realpython.com/python-speech-recognition/">speech_recognition</a></li>
+  <li><a href=""></a></li>
+  <li><a href="https://people.csail.mit.edu/hubert/pyaudio/docs/">PyAudio</a></li>
+  <li><a href="https://gtts.readthedocs.io/en/v2.0.0/">gTTS</a></li>
+  <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></li>
+</ul>
