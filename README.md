@@ -111,6 +111,7 @@ python3.7 jarvis.py
 ---
 
 ---
+
 <h3>Comandos</h3>
 
 Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes ordenar las siguientes instrucciones:
@@ -135,6 +136,7 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li>Quién eres</li>
   <li>Cuál es tu propósito</li>
 </ul> 
+
 ---
 
 ---
