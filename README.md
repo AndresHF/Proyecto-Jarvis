@@ -156,6 +156,11 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li><a href="https://es.wikipedia.org/wiki/Modelo_oculto_de_M%C3%A1rkov">Modelo oculto de Markov</a></li>
 </ul>
 <h4>Dependencias</h4>
+<h3>Nativas de Python</h3>
+<ul>
+  <li><a href="https://docs.python.org/2/library/subprocess.html">subprocess</a></li>
+</ul>
+<h3>Instaladas</h3>
 <ul>
   <li><a href="https://realpython.com/python-speech-recognition/">speech_recognition</a></li>
   <li><a href="https://gtts.readthedocs.io/en/v2.0.0/">gTTS</a></li>
