@@ -47,13 +47,16 @@ def doThingsInNotes(order, mode):
 
 
 def noteSwitchOperato(fileName, mode):
-    if mode == "tell":
-        noteContent = getShellOutput("cat ./core/notes/" + fileName)
-        jc.jarvisTalk(noteContent)
-    elif mode == "actualizar":
-        addRowsToNote(fileName)
-    elif mode == "borrar":
-        subprocess.call(["rm ./core/notes/" + fileName], shell=True)
+    try:
+        if mode == "tell":
+            noteContent = getShellOutput("cat ./core/notes/" + fileName)
+            jc.jarvisTalk(noteContent)
+        elif mode == "actualizar":
+            addRowsToNote(fileName)
+        elif mode == "borrar":
+            subprocess.call(["rm ./core/notes/" + fileName], shell=True)
+    except:
+        jc.jarvisTalk("Error en los parámetros")
 
 
 def enumerateNotes():
@@ -67,12 +70,7 @@ def enumerateNotes():
 
 def getAllNotes():
     try:
-        popen = subprocess.Popen(
-            ["ls ./core/notes/"], stdout=subprocess.PIPE, shell=True
-        )
-        outPutToCharArr = popen.communicate()[0]
-
-        return "".join(map(chr, outPutToCharArr)).replace("txt", "")
+        return getShellOutput("ls ./core/notes/").replace("txt", "")
     except:
         jc.jarvisTalk("No existen notas")
         return ""
@@ -80,9 +78,7 @@ def getAllNotes():
 
 def getShellOutput(cmd):
     popen = subprocess.Popen([cmd], stdout=subprocess.PIPE, shell=True)
-    outPutToCharArr = popen.communicate()[0]
-
-    return "".join(map(chr, outPutToCharArr))
+    return "".join(map(chr, popen.communicate()[0]))
 
 
 def deleteNote():
