@@ -134,7 +134,6 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
 <ul>
   <li><a href="https://docs.python.org/3/">Python 3.7.3 documentation</a></li>
   <li><a href="https://www.pythoncentral.io/">pythoncentral.io</a></li>
-  <li><a href=""></a></li>
 </ul>
 <h2>Teoría</h2>
 <ul>
@@ -143,13 +142,11 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
   <li><a href="https://es.wikipedia.org/wiki/Reconocimiento_del_habla">Características del reconocimiento de voz</a></li>
   <li><a href="http://director-it.com/index.php/es/ssoluciones/servicio-de-voz/acd,-call-center,-pabx/178-asr-reconocedor-de-voz.html">¿Cómo funciona el roconocimiento de voz?</a></li>
   <li><a href="https://es.wikipedia.org/wiki/Modelo_oculto_de_M%C3%A1rkov">Modelo oculto de Markov</a></li>
-  <li><a href=""></a></li>
 </ul>
 <h2>Dependencias</h2>
 <ul>
   <li><a href="https://realpython.com/python-speech-recognition/">speech_recognition</a></li>
-  <li><a href=""></a></li>
-  <li><a href="https://people.csail.mit.edu/hubert/pyaudio/docs/">PyAudio</a></li>
   <li><a href="https://gtts.readthedocs.io/en/v2.0.0/">gTTS</a></li>
+  <li><a href="https://people.csail.mit.edu/hubert/pyaudio/docs/">PyAudio</a></li>
   <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></li>
 </ul>
