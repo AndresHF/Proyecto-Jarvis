@@ -41,7 +41,7 @@ Está planteado en futuras versiones añadir Inteligencia Artificial junto con c
 <h3>Prerequisitos</h3>
 Es necesario ejecutar el programa en cualquier ditribución de <b><a href="https://www.linux.org/pages/download/">GNU/Linux</a></b> y tener instalado <b><a href="https://www.python.org/downloads/release/python-373/">Python3.7</a></b>.
 <br>
-Será necesario también tener instalado Google-Chrome, wmctrl, pactl, cvlc y xterm.
+Será necesario también tener instalado Google-Chrome,Firefox, wmctrl, pactl, cvlc y xterm.
 <br>
 Descarga el repositorio:
 
