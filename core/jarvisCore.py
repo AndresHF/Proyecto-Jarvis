@@ -147,12 +147,12 @@ def setProtocol(order):
 def closingProtocol(order):
     order = order.lower()
     if "chrome" in order:
-        subprocess.call(["killall chrome"], shell=True)
+        subprocess.call(["killall", "chrome"])
     elif "firefox" in order:
-        subprocess.call(["killall firefox"], shell=True)
+        subprocess.call(["killall", "firefox"])
     elif any(word in order for word in codeVariations):
         subprocess.call(
             ["kill $(ps -e | grep code | cut -f1 -d' ' | head -n 1)"], shell=True
         )
     elif "alarma" in order:
-        subprocess.call(["wmctrl -c Alarm"], shell=True)
+        subprocess.call(["wmctrl", "-c", "Alarm"])

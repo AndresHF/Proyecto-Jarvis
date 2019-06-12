@@ -4,6 +4,8 @@ import subprocess
 from random import choice
 from core.orders.web_operations.scraping import *
 
+noteAsnwers = {"leer": "leída", "actualizar": "actualizada", "borrar": "borrada"}
+
 
 def notesOperations(order):
     if any(x in order for x in notesAddConstants):
@@ -12,49 +14,50 @@ def notesOperations(order):
     elif any(x in order for x in knowNotes):
         enumerateNotes()
     elif any(x in order for x in noteContent):
-        doThingsInNotes(order, "tell")
-        jc.jarvisTalk("Nota leída.")
+        doThingsInNotes(order, "leer")
     elif any(x in order for x in modifyNote):
         doThingsInNotes(order, "actualizar")
-        jc.jarvisTalk("Nota actualizada")
     elif any(x in order for x in delteNote):
         doThingsInNotes(order, "borrar")
-        jc.jarvisTalk("Nota eliminada.")
 
 
 def doThingsInNotes(order, mode):
-    fileName = "".join(order.split("nota")[1]).strip()
-    if len(fileName) == 0:
-        jc.jarvisTalk("¿Cuál de ellas?")
-        fileName = "".join(jc.listen().lower().split(" ")) + ".txt"
-    else:
-        fileName = "".join(fileName.split(" ")) + ".txt"
 
     allNotes = getAllNotes()
-    print(allNotes)
-    print(fileName)
-    if fileName.replace("txt", "") not in getAllNotes():
-        jc.jarvisTalk("No he encontrado la nota " + fileName + ".")
-        jc.jarvisTalk("¿Quieres saber cuáles tienes?")
-        answer = jc.listen()
-        if answer == "sí":
-            enumerateNotes()
-            if len(allNotes) > 0:
+    if len(allNotes) > 0:
+        fileName = "".join(order.split("nota")[1]).strip()
+        if len(fileName) == 0:
+            jc.jarvisTalk("¿Cuál de ellas?")
+            fileName = "".join(jc.listen().lower().split(" ")) + ".txt"
+        else:
+            fileName = "".join(fileName.split(" ")) + ".txt"
+
+        if fileName.replace("txt", "") not in getAllNotes():
+            jc.jarvisTalk("No he encontrado la nota " + fileName + ".")
+            jc.jarvisTalk("¿Quieres saber cuáles tienes?")
+            answer = jc.listen()
+            if answer == "sí":
+                enumerateNotes()
                 jc.jarvisTalk("¿Qué nota quieres " + mode + "?")
                 doThingsInNotes("nota " + jc.listen(), mode)
+
+        else:
+            noteSwitchOperato(fileName, mode)
     else:
-        noteSwitchOperato(fileName, mode)
+        jc.jarvisTalk("No tienes notas")
 
 
 def noteSwitchOperato(fileName, mode):
     try:
-        if mode == "tell":
+        if mode == "leer":
             noteContent = getShellOutput("cat ./core/notes/" + fileName)
             jc.jarvisTalk(noteContent)
         elif mode == "actualizar":
             addRowsToNote(fileName)
         elif mode == "borrar":
             subprocess.call(["rm ./core/notes/" + fileName], shell=True)
+        jc.jarvisTalk("Nota" + noteAsnwers[mode])
+
     except:
         jc.jarvisTalk("Error en los parámetros")
 
@@ -99,7 +102,9 @@ def addNewNote():
             if len(fileName) == 0:
                 jc.jarvisTalk("No has dicho nada")
         fileName = "".join(fileName.split(" ")) + ".txt"
-        jc.jarvisTalk("Nombre establecido. " + fileName + ". Creando archivo.")
+        jc.jarvisTalk(
+            "Nombre establecido. " + fileName.replace("txt", "") + ". Creando archivo."
+        )
         subprocess.call(["touch ./core/notes/" + fileName], shell=True)
         jc.jarvisTalk("Archivo creado.")
         addRowsToNote(fileName)

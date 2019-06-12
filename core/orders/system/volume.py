@@ -1,5 +1,6 @@
 import subprocess
 from core.jarvisCore import *
+from core.orders.system.notes import getShellOutput
 
 
 def getNumbersInString(order):
@@ -7,13 +8,9 @@ def getNumbersInString(order):
 
 
 def getActualVolume():
-    popen = subprocess.Popen(
-        ['pactl list sinks | grep "Volume: front" | cut -f2 -d"/" | cut -b 3-4'],
-        stdout=subprocess.PIPE,
-        shell=True,
+    return getShellOutput(
+        'pactl list sinks | grep "Volume: front" | cut -f2 -d"/" | cut -b 3-4'
     )
-    volToCharArr = popen.communicate()[0]
-    return "".join(map(chr, volToCharArr)).strip()
 
 
 def setVolume(order):

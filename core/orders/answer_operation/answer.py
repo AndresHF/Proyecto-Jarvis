@@ -4,6 +4,7 @@ from core.orders.system.volume import *
 from core.orders.system.notes import *
 from core.orders.web_operations import scraping
 from core.orders.constants import *
+from core.orders.answer_operation.answer import getShellOutput
 
 weatherLabels = [
     {"label": "span", "obj": {"class": "c-tib-text"}},
@@ -38,11 +39,7 @@ def knowThings(order):
     if "notas" in order or "nota" in order:
         notesOperations(order)
     elif "hora es" in order:
-        getTimeAsByteArr = subprocess.Popen(
-            ["date '+%X'"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True
-        )
-        timeAsCharArr = getTimeAsByteArr.communicate(b"' stdin")[0]
-        jc.jarvisTalk("".join(map(chr, timeAsCharArr)))
+        jc.jarvisTalk(getShellOutput("date '+%H:%M'"))
     elif any(word in order for word in knowingThingsConstants):
         try:
 
