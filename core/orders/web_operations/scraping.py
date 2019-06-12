@@ -29,9 +29,9 @@ def scrapYoutubeWatchURL(order, cutter="música"):
     # once we got all <a href=""> labels from YouTube<html code> we need to find the one with "watch" in href attribute
     # we are going to get "/watch?v=AAA3KTsUQig" here
     link = ""
-    for l in links:
-        if "watch" in l["href"]:
-            link = l["href"]
+    for a in links:
+        if "watch" in a["href"]:
+            link = a["href"]
             break
 
     # now we are ready to return our final URL to play some music or videos from YouTube in our browser

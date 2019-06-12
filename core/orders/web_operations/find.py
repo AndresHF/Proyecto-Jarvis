@@ -8,13 +8,15 @@ import random
 youtubeLastOrder = None
 
 
+def openGoogle(url, flag=""):
+    subprocess.call(["google-chrome " + flag + " " + url + " &"], shell=True)
+
+
 def findInGoogle(order, splitWord="google"):
     googleSearch = order.split(splitWord)[1]
     search = "+".join(googleSearch.split(" "))
     url = "https://www.google.com/search?q=" + search
-    subprocess.Popen(
-        ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
-    )
+    openGoogle(url)
 
 
 def findInMaps(order):
@@ -48,9 +50,7 @@ def findInMaps(order):
     )
 
     # So its time to open our browser with the URL Google Maps likes to use
-    subprocess.Popen(
-        ["google-chrome " + url + " &"], shell=True, stdout=subprocess.PIPE
-    )
+    openGoogle(url)
 
 
 def findRoutes():
@@ -83,7 +83,7 @@ def findRoutes():
     for dest in moreDestinations:
         url += "/" + ",+".join(dest.split(" "))
 
-    subprocess.Popen(["google-chrome " + url + " &"], shell=True)
+    openGoogle(url)
     jc.jarvisTalk("¡Buen viaje!")
 
 
@@ -91,7 +91,7 @@ def findInWikipedia(order):
     wikiSreach = order.split("wikipedia")[1]
     search = "_".join(wikiSreach.split(" ")).title()
     url = "https://es.wikipedia.org/wiki/" + search
-    subprocess.Popen(["google-chrome " + url + " &"], shell=True)
+    openGoogle(url)
 
 
 def searchAndPlay(order, cutter="música"):
@@ -127,4 +127,4 @@ def searchAndPlay(order, cutter="música"):
     link = scraping.scrapYoutubeWatchURL(order, cutter)
 
     # then we open it
-    subprocess.call(["google-chrome --new-window " + link + " &"], shell=True)
+    openGoogle(link, "--new-window")
