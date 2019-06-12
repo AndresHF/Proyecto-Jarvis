@@ -56,7 +56,7 @@ def initOrderProtocol(order):
 # --------------------- COMUNICATION FUNCTIONS ----------------------------------------------------------------
 def jarvisTalk(speech):
     fileName = "./core/recordings/temp.mp3"
-    file = gTTS(speech, "es-es")
+    file = gTTS(speech, "es-es", slow=False)
     file.save(fileName)
     subprocess.call(["cvlc", "--play-and-exit", fileName])
     # time.sleep(voice.duration)
@@ -117,8 +117,6 @@ def searchInBrowserProtocol(order):
             find.findInMaps(order)
         elif "sistema" in order:
             word = answer.getLastWord(order)
-            if word is "project":
-                word += "s"
             subprocess.call(['xterm -e "display ' + word + '"'], shell=True)
         else:
             find.findInGoogle(order, "busca")
@@ -128,22 +126,22 @@ def searchInBrowserProtocol(order):
 
 def setProtocol(order):
     order = order.lower()
-    # try:
-    if "volumen" in order:
-        volume.setVolume(order)
-    elif "alarma" in order:
-        time = order.split(" ")[len(order.split(" ")) - 1]
-        hour = time.split(":")[0]
-        minute = ""
-        if ":" in time:
-            minute = " " + time.split(":")[1]
-        subprocess.call(["alarm " + hour + minute], shell=True)
-    elif "nota" in order or "notas" in order:
-        notesOperations(order)
-    else:
-        find.searchAndPlay(order, "pon")
-    # except:
-    #    jarvisTalk("Error en los parámetros")
+    try:
+        if "volumen" in order:
+            volume.setVolume(order)
+        elif "alarma" in order:
+            time = order.split(" ")[len(order.split(" ")) - 1]
+            hour = time.split(":")[0]
+            minute = ""
+            if ":" in time:
+                minute = " " + time.split(":")[1]
+            subprocess.call(["alarm " + hour + minute], shell=True)
+        elif "nota" in order or "notas" in order:
+            notesOperations(order)
+        else:
+            find.searchAndPlay(order, "pon")
+    except:
+        jarvisTalk("Error en los parámetros")
 
 
 def closingProtocol(order):
@@ -156,4 +154,5 @@ def closingProtocol(order):
         subprocess.call(
             ["kill $(ps -e | grep code | cut -f1 -d' ' | head -n 1)"], shell=True
         )
-
+    elif "alarma" in order:
+        subprocess.call(["wmctrl -c Alarm"], shell=True)
