@@ -1,5 +1,7 @@
 setOrders = ["pon", "sube", "baja"]
 
+recordingOrders = ["graba ", "grabar "]
+
 disconectingOrders = ["apágate", "desconéctate", "duérmete"]
 
 generalOrders = ["inicia"]
@@ -42,3 +44,5 @@ deleteNotes = ["borrar", "eliminar"]
 modifyNote = ["modificar", "actualizar"]
 
 delteNote = ["borrar", "eliminar", "tirar a la basura"]
+
+codeVariations = ["code", "kodi", "cod"]

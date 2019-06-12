@@ -34,6 +34,6 @@ byeBye = [
     "Chao pescao",
     "Arrivederchi bambino",
     "Sayonara beibi",
-    "aaaaaaaaaaaaa",
     "Me muero muy fuertemente. Adiós",
+    "Hasta luego",
 ]
