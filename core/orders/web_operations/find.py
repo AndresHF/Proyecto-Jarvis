@@ -60,7 +60,8 @@ def findRoutes():
     destination = jc.listen()
     moreDestinations = []
     answer = ""
-    while "finaliza" not in answer:
+    jc.jarvisTalk("Para finalizar di. Finalizar ruta")
+    while "finalizar ruta" not in answer:
         try:
             jc.jarvisTalk(random.choice(destinations))
             answer = jc.listen()
@@ -97,11 +98,8 @@ def searchAndPlay(order, cutter="música"):
     order = order.lower()
     global youtubeLastOrder
     realPetition = order.split(cutter)[1].strip()
-    if youtubeLastOrder is None:
-        # we need to keep track of last petition, so we can close youtube with wmctrl linux command controller
-        youtubeLastOrder = realPetition
-    else:
-        # in case we already openned a YouTube video we should close it first, it´s annoying to have to videos playin at same time
+    if youtubeLastOrder is not None:
+        # in case we already openned a YouTube video we should close it first, it´s annoying to have two videos playin at same time
         try:
             # first step is look for our video getting all web browser process
             popen = subprocess.Popen(
@@ -118,10 +116,12 @@ def searchAndPlay(order, cutter="música"):
 
             # so we close it looking for last video oppened
             subprocess.call(['wmctrl -c "' + line + '"'], shell=True)
-            youtubeLastOrder = realPetition
         except:
             # or close last founded in case we fail
             subprocess.call(["wmctrl -c YouTube"], shell=True)
+
+    # we need to keep track of last petition, so we can close youtube with wmctrl linux command controller
+    youtubeLastOrder = realPetition
 
     # after that we get our link by scrapYoutubeWatchURL() method
     link = scraping.scrapYoutubeWatchURL(order, cutter)

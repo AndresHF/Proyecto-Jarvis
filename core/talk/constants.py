@@ -35,5 +35,5 @@ byeBye = [
     "Arrivederchi bambino",
     "Sayonara beibi",
     "Me muero muy fuertemente. Adiós",
-    "Hasta luego",
+    "Te voy a echar de menos.",
 ]
