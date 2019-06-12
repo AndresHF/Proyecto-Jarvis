@@ -159,6 +159,7 @@ Para activar a María, simplemente menciona su nombre. Una vez contesta, puedes 
 <h5>Nativas de Python</h5>
 <ul>
   <li><a href="https://docs.python.org/2/library/subprocess.html">subprocess</a></li>
+  <li><a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request">urllib.request</a></li>
 </ul>
 <h5>Instaladas</h5>
 <ul>
