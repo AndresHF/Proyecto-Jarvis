@@ -2,10 +2,9 @@ import time
 import sys
 import subprocess
 
-sys.path.insert(0, "/home/jaguars/projects/jarvis_1/core")
-import threading
-import jarvisCore as jc
-from random import randint
+sys.path.insert(0, "./core")
+import core.jarvisCore as jc
+from random import choice
 from core.talk.constants import *
 from core.orders.constants import *
 from core.orders.system.recording import *
@@ -15,13 +14,12 @@ mainThread = True
 
 while mainThread:
     if "María" in jc.listen().strip():
-        newOrder = jc.listen(
-            awaitingOrders[randint(0, len(awaitingOrders) - 1)]
-        ).strip()
+        jc.jarvisTalk(choice(awaitingOrders))
+        newOrder = jc.listen().strip()
         print("NEW ORDER " + newOrder)
         if any(x in newOrder for x in disconectingOrders):
             mainThread = False
-            jc.jarvisTalk("Desconectando programa...")
+            jc.jarvisTalk(choice(byeBye))
 
         elif "iniciar" in newOrder:
             jc.initOrderProtocol(newOrder)
@@ -38,7 +36,7 @@ while mainThread:
         elif "cierra" in newOrder:
             jc.closingProtocol(newOrder)
 
-        elif "graba " in newOrder:
+        elif any(order in newOrder for order in recordingOrders):
             recordConversation()
 
         elif "reproduce" in newOrder:
@@ -48,14 +46,15 @@ while mainThread:
             jc.setProtocol(newOrder)
 
         elif "hazte la loca" in newOrder:
-            jc.jarvisTalk(crazyMode[randint(0, len(crazyMode) - 1)])
+            jc.jarvisTalk(choice(crazyMode))
 
         elif "apaga el ordenador" in newOrder:
-            jc.jarvisTalk("Apagando el ordenador")
+            jc.jarvisTalk("Apagando el ordenador. Hasta luego")
             mainThread = False
             jc.closeComputer()
-
+        elif "nota" in newOrder or "notas" in newOrder:
+            jc.setProtocol(newOrder)
         else:
             jc.jarvisTalk(iDontUnderstand[randint(0, len(iDontUnderstand) - 1)])
-    time.sleep(0.5)
+    time.sleep(0.4)
 
